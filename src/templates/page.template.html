@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="{{htmlLang}}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+(function(){
+  try{
+    var saved = localStorage.getItem('geometriya-theme');
+    var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+  }catch(e){}
+})();
+</script>
+<title>{{pageTitle}}</title>
+<meta name="description" content="{{metaDescription}}">
+{{ALT_LINKS}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap header-inner">
+    <div class="brand"><a href="/">
+      <img class="logo-light" src="/assets/img/logo.png" alt="Геометрия">
+      <img class="logo-dark" src="/assets/img/logo-white.png" alt="Геометрия">
+    </a></div>
+    <nav class="nav-desktop">
+      <a href="#about">{{navAbout}}</a>
+      <a href="#plans">{{navPlans}}</a>
+      <a href="#contact">{{navContact}}</a>
+    </nav>
+    <div class="header-right">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="{{themeToggleLabel}}">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+      <div class="lang-switch">{{LANG_SWITCH}}</div>
+      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="{{navToggleLabel}}">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="#about">{{navAbout}}</a>
+    <a href="#plans">{{navPlans}}</a>
+    <a href="#contact">{{navContact}}</a>
+  </nav>
+</header>
+
+<section class="hero" id="hero">
+  <div class="wrap hero-content">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow"><span class="tri tri-spy is-active" data-spy="hero"></span><span>{{heroEyebrow}}</span></div>
+        <h1>{{heroH1}}</h1>
+        <p class="hero-sub">{{heroSub}}</p>
+        <a href="#contact" class="btn">{{heroCta}}</a>
+      </div>
+      <div class="readout">
+        <div class="readout-top">
+          <span class="readout-label">{{readoutLabel}}</span>
+          <span class="readout-live"><span class="tri tri-pulse"></span><span>{{readoutLive}}</span></span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-value mono">{{stat1Value}}</span>
+          <span class="stat-label">{{stat1Label}}</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-value mono" style="font-size:16px;">{{stat2Value}}</span>
+          <span class="stat-label">{{stat2Label}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker"><span class="tri tri-spy" data-spy="about"></span><span>{{aboutKicker}}</span></div>
+      <h2>{{aboutH2}}</h2>
+    </div>
+    <p class="about-lead reveal">{{aboutLead}}</p>
+    <div class="principles">
+      <div class="principle reveal">
+        <div class="principle-title"><span class="tri"></span><span>{{p1Title}}</span></div>
+        <div class="principle-text">{{p1Text}}</div>
+      </div>
+      <div class="principle reveal">
+        <div class="principle-title"><span class="tri"></span><span>{{p2Title}}</span></div>
+        <div class="principle-text">{{p2Text}}</div>
+      </div>
+      <div class="principle reveal">
+        <div class="principle-title"><span class="tri"></span><span>{{p3Title}}</span></div>
+        <div class="principle-text">{{p3Text}}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="plans">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker"><span class="tri tri-spy" data-spy="plans"></span><span>{{plansKicker}}</span></div>
+      <h2>{{plansH2}}</h2>
+      <p class="section-sub">{{plansLead}}</p>
+    </div>
+    <div class="phases">
+      <div class="phase reveal">
+        <div class="phase-step">{{phase1Step}}</div>
+        <div class="phase-title">{{phase1Title}}</div>
+        <div class="phase-text">{{phase1Text}}</div>
+      </div>
+      <div class="phase reveal">
+        <div class="phase-step">{{phase2Step}}</div>
+        <div class="phase-title">{{phase2Title}}</div>
+        <div class="phase-text">{{phase2Text}}</div>
+      </div>
+      <div class="phase reveal">
+        <div class="phase-step">{{phase3Step}}</div>
+        <div class="phase-title">{{phase3Title}}</div>
+        <div class="phase-text">{{phase3Text}}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker"><span class="tri tri-spy" data-spy="contact"></span><span>{{contactKicker}}</span></div>
+      <h2>{{contactH2}}</h2>
+      <p class="section-sub">{{contactSub}}</p>
+    </div>
+    <div class="contact-grid reveal">
+      <div class="contact-col">
+        <div class="contact-item">
+          <span class="contact-k">{{ckEmail}}</span>
+          <span class="contact-v"><a href="mailto:hello@geometry.kg">hello@geometry.kg</a></span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-k">{{ckPhone}}</span>
+          <span class="contact-v">+996 XXX XXX XXX</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-k">{{ckAddress}}</span>
+          <span class="contact-v">{{ckAddressV}}</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-k">{{ckSocial}}</span>
+          <span class="contact-v">Telegram · Instagram <span class="badge-soon">{{badgeSoon}}</span></span>
+        </div>
+      </div>
+      <div class="contact-col contact-cta">
+        <p class="section-sub">{{ctaText}}</p>
+        <a href="mailto:hello@geometry.kg" class="btn">{{ctaBtn}}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>{{footerLegal}}</span>
+    <span>RU · KG · EN</span>
+  </div>
+</footer>
+
+<script src="/assets/js/theme.js"></script>
+<script src="/assets/js/nav.js"></script>
+<script src="/assets/js/motion.js"></script>
+</body>
+</html>
