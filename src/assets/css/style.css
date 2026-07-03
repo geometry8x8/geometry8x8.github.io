@@ -49,6 +49,11 @@ header{
   transition:background .2s, border-color .2s;
 }
 .header-inner{display:flex; align-items:center; justify-content:space-between; padding:16px 0; gap:20px;}
+.brand{
+  display:flex;
+  align-items:center;
+  margin-left:24px;
+}
 .brand img{height:34px; width:auto;}
 .logo-light{display:block;}
 .logo-dark{display:none;}
@@ -215,6 +220,7 @@ footer{border-top:1px solid var(--line); padding:26px 0;}
 }
 
 @media (max-width:480px){
+  .brand{margin-left:8px;}
   .brand img{height:26px;}
   h1{font-size:32px;}
   .hero{padding:48px 0 40px;}
